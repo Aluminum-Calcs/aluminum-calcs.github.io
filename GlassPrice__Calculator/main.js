@@ -19,6 +19,7 @@ let add = document.querySelector('.add');
 let reset = document.querySelector('.reset');
 let compute = document.querySelector('.compute');
 let tabulate = document.querySelector('.tabulate');
+let clear_table = document.querySelector('.clear');
 
 compute.addEventListener('click', () => {
   calculate();
@@ -150,24 +151,48 @@ reset.addEventListener('click', ()=>{
 tabulate.addEventListener('click', () => {
   render__rows();
 })
+clear_table.addEventListener('click', () => {
+  localStorage.removeItem('sizes')
+  localStorage.removeItem('g__no');
+  sizes = [];
+  document.querySelector('.table').classList.add('empty');
+})
+
+
 
 function render__rows() {
   let table = document.querySelector('.table');
-  let table__body = document.querySelector('.table__body');
-  let row__template = document.querySelector('#row');
+  let table__body = table.querySelector('.table__body');
+  let total = table.querySelector('.table__footer .total');
+
+  let row__template = document.querySelector('template#row');
   let row__template__content = row__template.content;
+  let html = ``;
+  let sum = 0;
 
-  sizes.forEach(el => {
+  if (sizes.length == 0) {
+    table.classList.add('empty')
+    return;
+  }
+  table.classList.remove('empty')
+  sizes.forEach((el,i) => {
     let clone = document.importNode(row__template__content, true);
-    clone.querySelector('.sn').innerHTML = el.id;
-    clone.querySelector('.size').innerHTML = el.size;
-    clone.querySelector('.quantity').innerHTML = el.qty;
-    clone.querySelector('.per').innerHTML = `@₦${el.per}`;
-    clone.querySelector('.total').innerHTML = el.price;
 
-    table__body.appendChild(clone);
+    clone.querySelector('.row').setAttribute('data-id', el.id);
+    clone.querySelector('.sn').innerHTML = (i + 1);
+    clone.querySelector('.size').innerHTML = el.size;
+    clone.querySelector('.per').innerHTML = `@₦${el.per}(${el.qty})`;
+    clone.querySelector('.price').innerHTML = el.price;
+    
+    html += clone.querySelector('.row').outerHTML;
+    sum += el.price;
   });
-  
+  table__body.innerHTML = html;
+  total.innerHTML = sum;
+
+  //Now calculate the total
+  console.log(total);
+  console.log(sizes);
 }
 
 function prompt__modal() {

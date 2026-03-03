@@ -11,7 +11,7 @@
 <body>
   <div class="heading">
     <h1>Glass Price Calculator</h1>
-    <button class="add"><span>+</span><span>Add New</span></button>
+    <!-- <button class="add"><span>+</span><span>Add New</span></button> -->
   </div>
   <form>
     <!-- WIDTH -->
@@ -39,54 +39,54 @@
     </fieldset>
     <div class="price__notice error">Default is ₦90,000</div>
   </form>
+
   <!-- ANSWER -->
-  <div class="answer__section">
+  <section class="answer__section">
     <p class="answer">Glass Price: </p>
-    <button class="reset">RESET</button>
-    <button class="tabulate"></i>TABULATE</button>
-    <button class="compute">COMPUTE</button>
-  </div>
-  <div class="table">
-    <div class="table__header">
-      <p class="row">
-        <span class="sn col-1">s/n</span>
-        <span class="size col-2">size</span>
-        <span class="quantity col-3">qty</span>
-        <span class="per col-4">per</span>
-        <span class="total col-5">sum</span>
-      </p>
+    <div class="answer__section__btns">
+      <button class="reset" title="Resets the input fields">RESET</button>
+      <button class="clear" title="Deletes all tabulated prices">Clear Table</button>
+      <button class="tabulate"></i title="Tabulates computed input">TABULATE</button>
+      <button class="compute" title="Computes Price">COMPUTE</button>
     </div>
-    <div class="table__body">
-      <p class="row">
-        <span class="sn col-1">1</span>
-        <span class="size col-2">600 ✕ 900</span>
-        <span class="quantity col-3">1</span>
-        <span class="per col-4">@₦7,000</span>
-        <span class="total col-5">21,000</span>
-        <span class="remove col-6">✕</span>
-      </p>
-      <template id="row">
-        <p class="row">
-          <span class="sn col-1">2</span>
-          <span class="size col-2">600 ✕ 900</span>
-          <span class="quantity col-3">1</span>
-          <span class="per col-4">@₦7,000</span>
-          <span class="total col-5">21,000</span>
-          <span class="remove col-6">✕</span>
-        </p>
-      </template>
-    </div>
-    <div class="table__footer">
-      <p class="row">
-        <span class="total col-1 col-2 col-2 col-4">Total</span>
-        <span class="total-price">32,000</span>
-      </p>
-    </div>
-  </div>
+  </section>
 
-  <button class="clear">Clear Table</button>
+  <section class="list">
+    <table class="table empty">
+      <thead class="table__header">
+        <tr>
+          <th>s/n</th>
+          <th>size</th>
+          <th>per</th>
+          <th colspan="2">sum</th>
+        </tr>
+      </thead>
+      <tbody class="table__body">
+        <tr class="row">
+          <td>1</td>
+          <td>600 ✕ 900</td>
+          <td>@₦7,000(1)</td>
+          <td>21,000</td>
+          <td>✕</td>
+        </tr>
+        <tr class="row">
+          <td>2</td>
+          <td>1650 ✕ 1070</td>
+          <td>@₦45,000(3)</td>
+          <td>135,000</td>
+          <td>✕</td>
+        </tr>
+      </tbody>
+      <tfoot class="table__footer">
+        <tr class="row">
+          <td colspan="3">Total</td>
+          <td colspan="2" class="total">32,000</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
 
-  <div class="modal">
+  <section class="modal">
     <div class="modal__overlay" id="close-modal">
     </div>
     <div class="modal__content">
@@ -100,7 +100,18 @@
         <button class="modal__content__answer__create" id="create">Create</button>
     </div>
     </div>
-  </div>
+  </section>
+
+  <!-- TEMPLATES -->
+  <template id="row">
+    <tr class="row">
+      <td class="sn">1</td>
+      <td class="size">600 ✕ 900</td>
+      <td class="per">@₦7,000(1)</td>
+      <td class="price">21,000</td>
+      <td class="close-btn">✕</td>
+    </tr>
+  </template>
   
   <script src="./main.js" defer></script>
 </body>
