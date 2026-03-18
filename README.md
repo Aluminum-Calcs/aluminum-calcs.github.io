@@ -1,15 +1,11 @@
-# 🛠️ Aluminum Workshop Utility Tool
+# Aluminum Workshop Utility Tool
 
-A simple tool built to help aluminum craftsmen calculate prices and reduce manual work in the workshop.
+A simple tool built to help aluminum craftsmen calculate prices and reduce manual work in the workshop. This is the home page of the project.
+## Live Demo
 
----
-## 🚀 Live Demo
+[Try the app here](https://ehiejakhian.github.io/My__Work__Calcs/)
 
-👉 [Try the app here](https://ehiejakhian.github.io/My__Work__Calcs/)
-
----
-
-## 📌 Background
+## Background
 
 Hi! I'm [**Ehi Ejakhian**](https://ehiejakhian.github.io/).
 
@@ -19,9 +15,7 @@ While working there, I noticed that many tasks — especially calculations and p
 
 So I decided to build a small tool to make the process faster and easier.
 
----
-
-## 💡 What This Tool Does
+## What This Tool Does
 
 This project helps with:
 
@@ -29,44 +23,32 @@ This project helps with:
 - Selecting items from a list and automatically filling their prices  
 - Reducing repetitive manual calculations  
 
----
-
-## ⚙️ Features
+## Features
 
 - 📋 Dropdown list of workshop items  
 - 💰 Automatic price filling  
 - 🧮 Real-time calculations using JavaScript  
 - ⚡ Simple and fast interface  
 
----
-
-## 🛠️ Built With
+## Built With
 
 - HTML  
 - CSS  and SCSS 
 - JavaScript and LocalStorage API
 
----
-
-## 🚧 Status
+## Status
 
 This project is still a work in progress.  
 I’m actively improving it and adding more features based on real workshop needs.
 
----
-
-## 🎯 Goal
+## Goal
 
 To create a practical, easy-to-use tool that can help local aluminum craftsmen work faster and reduce errors.
 
----
-
-## 📷 Preview
+## Preview
 
 (Add screenshots or screen recordings here)
 
----
-
-## 🤝 Feedback
+## Feedback
 
 If you have ideas, suggestions, or improvements, feel free to share. I’d really appreciate it.
