@@ -13,10 +13,16 @@ body {
   font-size: 18px;
   color: var(--text);
   background: var(--bg);
+  @include df(normal, normal,  column, 20px);
   input, button {
     font-family: Monospace;
   }
 }
+
+main {
+  @include df(normal, normal,  column, 20px);
+}
+
 h1 {
   border-bottom: 1px solid;
   padding-bottom: 10px;
